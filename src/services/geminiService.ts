@@ -1,6 +1,5 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-// Initialize Gemini
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const MODEL_FAST = 'gemini-2.5-flash';
