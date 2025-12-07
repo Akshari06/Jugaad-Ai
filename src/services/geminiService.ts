@@ -1,5 +1,6 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
+// API Key is injected via vite.config.ts define
 const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
 
 const MODEL_FAST = 'gemini-2.5-flash';
