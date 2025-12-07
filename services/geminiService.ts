@@ -1,7 +1,22 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
+// Helper to safely get API key in various environments (Vite, Next.js, or plain Node)
+const getApiKey = () => {
+  // @ts-ignore
+  if (typeof import.meta !== 'undefined' && import.meta.env && import.meta.env.VITE_API_KEY) {
+    // @ts-ignore
+    return import.meta.env.VITE_API_KEY;
+  }
+  // @ts-ignore
+  if (typeof process !== 'undefined' && process.env && process.env.API_KEY) {
+    // @ts-ignore
+    return process.env.API_KEY;
+  }
+  return 'AIzaSyDkDItzAi8UvJBl9HnlqaXHf9cSv_XyaHg';
+};
+
 // Initialize Gemini
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || 'YOUR_API_KEY' });
+const ai = new GoogleGenAI({ apiKey: getApiKey() });
 
 const MODEL_FAST = 'gemini-2.5-flash';
 
