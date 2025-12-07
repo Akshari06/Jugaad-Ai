@@ -1,0 +1,8 @@
+{
+  "name": "Copy of Jugaad-AI",
+  "description": "A conversational AI assistant for India's unorganized retail sector, enabling inventory management and ledger digitization via voice and image on a WhatsApp-like interface.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
